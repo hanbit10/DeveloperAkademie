@@ -2,18 +2,235 @@
   <head>
     <meta charset="uft-8" />
     <title>Korean Restaurant</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .restaurant-title {
+        font-size: 8em;
+        font-weight: bold;
+        color: Orange;
+        filter: drop-shadow(3px 6px 1px rgb(0, 0, 0, 0.8));
+      }
+
+      h1,
+      h2,
+      .diphylleia-regular {
+        font-family: "Diphylleia", serif;
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      .myBody {
+        margin: 0px;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .restaurant-img {
+        width: 100%;
+        height: 600px;
+        filter: blur(4px);
+        object-fit: cover;
+      }
+
+      .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 600px;
+        color: white;
+      }
+
+      .container {
+        margin-bottom: 80px;
+        padding-left: 100px;
+        padding-right: 100px;
+      }
+
+      footer {
+        background-color: rgba(35, 38, 41, 0.9);
+        color: white;
+        padding: 100px;
+        margin-bottom: 0;
+
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer-link {
+        color: white;
+        text-decoration: none;
+      }
+
+      .footer-link:hover {
+        text-decoration: underline;
+        color: orange;
+      }
+
+      .menu {
+        position: absolute;
+        top: 32px;
+        right: 100px;
+      }
+
+      .menu a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        margin-left: 32px;
+        filter: drop-shadow(3px 3px 1px rgb(0, 0, 0, 0.8));
+      }
+
+      .menu a:hover {
+        color: orange;
+      }
+
+      .order-btn {
+        background-color: orange;
+        padding: 16px;
+        color: black !important;
+      }
+
+      .order-btn:hover {
+        background-color: rgb(248, 189, 80);
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Diphylleia&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
-  <body>
+  <body class="myBody">
     <div style="position: relative">
-      <img src="./img/bibimbap.jpg" alt="" style="width: 1020; height: 600px" />
-      <img src="./img/kimbab.jpg" alt="" style="width: 1020; height: 600px" />
-      <img src="./img/ramen.jpg" alt="" style="width: 1020; height: 600px" />
+      <img class="restaurant-img" src="./img/restaurant.jpg" alt="" />
     </div>
 
-    <h1>Herzlich Willkommen</h1>
-    Hallo, das ist meine erste <a href="https://google.de">Internetseite!</a>
-    <br />
-    Hier kommt die Beschreibung.
+    <div class="main-container">
+      <div class="restaurant-title diphylleia-regular">통인가게</div>
+      <h1>Herzlich Wilkommen!</h1>
+      <br />
+      Hier findest du einen Überblick über unsere Speisen.
+    </div>
+
+    <div class="menu">
+      <a href="#contact">RESERVIEREN</a>
+      <a href="#" class="order-btn">BESTELL ONLINE</a>
+      <a href="#contact">KONTAKT</a>
+      <a href="#address">ANFAHRT</a>
+    </div>
+
+    <div class="container">
+      <h2>Unsere Öffnungszeiten</h2>
+      <table>
+        <tr>
+          <th>Mo-Fr</th>
+          <td>12:00 - 22:00 Uhr</td>
+        </tr>
+        <tr>
+          <th>Sa</th>
+          <td>12:00 - 24:00 Uhr</td>
+        </tr>
+        <tr>
+          <th>So</th>
+          <td>12:00 - 24:00 Uhr</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="container" id="address">
+      <h2>Anfahrt</h2>
+      Unsere Adresse lautet: Alexianergraben 40, 52062 Aachen
+      <br />
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2523.167457800016!2d6.079211710625056!3d50.77246926400937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0997d0f92e72f%3A0x5ffcf846bf59d1ca!2sAlexianergraben%2040%2C%2052062%20Aachen!5e0!3m2!1sen!2sde!4v1709715153420!5m2!1sen!2sde"
+        width="100%"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <div class="container">
+      <h2>Tageskarte</h2>
+      <table>
+        <tr>
+          <th>1</th>
+          <td>Bibimbap</td>
+          <td>13,99 €</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Kimbap</td>
+          <td>9,99 €</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Ramen</td>
+          <td>12,99 €</td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>Bulgogi</td>
+          <td>15,99 €</td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>Dakgalbi</td>
+          <td>15,99 €</td>
+        </tr>
+      </table>
+
+      <table>
+        Jetzt die Tageskarte
+        <a href="./downloads/menukarte.pdf" target="_blank">herunterladen</a
+        >.
+      </table>
+    </div>
+    <div class="container" id="contact">
+      <h2>Kontakt</h2>
+      So kannst du uns kontaktieren: <br />
+
+      Telefon: <a href="tel:015774128843">+49 1577 4128843</a> <br />
+      E-Mail: <a href="mailto:chanbit10@gmail.com">chanbit10@gmail.com</a>
+    </div>
   </body>
+
+  <br />
+  <br />
+
+  <footer>
+    <div>(C) Copyright 2024 Hanbit Chang</div>
+    <div>
+      <a href="impressum.html" class="footer-link">Impressum</a> |
+      <a href="datenschutz.html" class="footer-link">Datenschutz</a>
+    </div>
+  </footer>
 </html>
