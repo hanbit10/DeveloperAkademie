@@ -1,18 +1,29 @@
 body {
   margin: 0;
   font-family: "PT Sans", sans-serif;
+  color: white;
 }
 
-h2 {
+h2,
+h3 {
+  font-weight: normal;
+}
+h1 {
   font-family: "Viga", sans-serif;
+  font-size: 6em;
+  margin: 0;
 }
 
 .aot {
   background-image: url(../band-website/assets/img/header.png);
-  background-position: bottom;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
@@ -21,6 +32,10 @@ header {
   align-items: center;
   background-color: rgb(0, 0, 0, 0.1);
   padding: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 header img {
@@ -35,4 +50,163 @@ header img {
 
 .navLink:hover {
   color: #b48a4e;
+}
+
+.nav-img {
+  margin-left: 16px;
+  width: auto;
+  height: 24px;
+}
+
+.nav-img:hover {
+  filter: drop-shadow(0px 0px 6px #ffffff);
+}
+
+button {
+  background-color: #b48a4e;
+  padding: 16px;
+  border-width: 0px;
+}
+
+button a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.section-quicklinks {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 100px 100px;
+}
+
+.quickLink {
+  display: flex;
+  flex-direction: column;
+  color: #b48a4e;
+  text-decoration: none;
+  font-weight: bold;
+  gap: 16px;
+}
+
+.quickLink img {
+  width: 200px;
+  height: 200px;
+}
+
+.buy-ticket-section {
+  display: flex;
+  align-items: center;
+  background-color: #272727;
+}
+
+.buy-ticket-section img {
+  width: 280px;
+  height: 280px;
+}
+
+.buy-ticket-info {
+  padding: 40px;
+  height: 200px;
+  flex: 1;
+}
+
+.buy-ticket-info h2 {
+  margin: 0;
+}
+
+.buy-ticket-separator {
+  background-color: #ffffff;
+  width: 1px;
+  height: 200px;
+  margin-right: 10px;
+}
+
+.buy-ticket-container {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.slogan-section {
+  display: flex;
+  justify-content: center;
+  padding: 80px 80px;
+  color: #b48a4e;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.video-section {
+  background-image: url("./assets/img/bottom.png");
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+footer {
+  display: flex;
+  height: 200px;
+  background-color: black;
+  font-weight: bold;
+  padding: 40px;
+}
+
+.footer-img {
+  height: 24px;
+  margin: 15px;
+  padding: 3px;
+  background-color: #b48a4e;
+}
+
+.half-w {
+  width: 50%;
+}
+
+.footer-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input {
+  height: 41px;
+  border: 0;
+  padding: 0;
+  flex-grow: 1;
+}
+input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  padding-left: 16px;
+}
+
+.footer-form {
+  display: flex;
+  height: 41px;
+}
+
+.footer-submit-btn {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.footer-center {
+  display: flex;
+  justify-content: center;
 }
