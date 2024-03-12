@@ -12,6 +12,7 @@ h1 {
   font-family: "Viga", sans-serif;
   font-size: 6em;
   margin: 0;
+  text-align: center;
 }
 
 .aot {
@@ -82,7 +83,8 @@ button a {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 100px 100px;
+  padding: 80px 80px;
+  gap: 16px;
 }
 
 .quickLink {
@@ -91,12 +93,15 @@ button a {
   color: #b48a4e;
   text-decoration: none;
   font-weight: bold;
-  gap: 16px;
+  gap: 8px;
+  /* width: 30%; */
+  flex: 1;
 }
 
 .quickLink img {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .buy-ticket-section {
@@ -128,7 +133,9 @@ button a {
 }
 
 .buy-ticket-container {
-  width: 300px;
+  max-width: 300px;
+  padding-left: 24px;
+  padding-right: 24px;
   display: flex;
   justify-content: center;
 }
@@ -209,4 +216,61 @@ input::placeholder {
 .footer-center {
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .section-quicklinks {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 700px) {
+  .hide-mobile {
+    display: none;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+
+  .full-width-mobile {
+    width: 100%;
+  }
+
+  .footer-text {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .buy-ticket-info {
+    text-align: center;
+  }
+}
+
+@media (max-width: 950px) {
+  .buy-ticket-section {
+    flex-direction: column;
+  }
+
+  .buy-ticket-section img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .buy-ticket-separator {
+    display: none;
+  }
+
+  .buy-ticket-container {
+    padding-bottom: 40px;
+  }
+
+  p {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+  }
 }
