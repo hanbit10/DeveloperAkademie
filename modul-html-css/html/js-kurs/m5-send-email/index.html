@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+  , initial-scale=1.0"
+    />
+    <script src="script.js"></script>
+    <style></style>
+    <title>InputTest</title>
+  </head>
+  <body>
+    <form>
+      <label for="amount">Amount:</label>
+      <input id="amount" name="amount" min="0" max="5" type="number" required />
+      <label for="second_amount">second Amount</label>
+      <input
+        id="second_amount"
+        name="second_amount"
+        min="0"
+        max="5"
+        type="number"
+        required
+      />
+      <input type="submit" value="Submit Button" />
+    </form>
+
+    <form>
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <br />
+    <!-- modify this form HTML and place wherever you want your form -->
+    <form method="POST" onsubmit="sendMail(event)">
+      <label>
+        Your email:
+        <input type="email" name="email" />
+      </label>
+      <label>
+        Your message:
+        <textarea name="message"></textarea>
+      </label>
+      <!-- your other form fields go here -->
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>
