@@ -7,8 +7,8 @@
 }
 
 @font-face {
-  font-family: "GenKJwajinOTF-Rg";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GenKJwajinOTF-Rg.woff")
+  font-family: "dimibang_new";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/dimibang_new.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
@@ -36,8 +36,9 @@ body {
 h1 {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-family: "GenKJwajinOTF-Rg";
-  font-size: 96px;
+  font-family: "dimibang_new";
+  font-size: 126px;
+  font-weight: normal;
 }
 
 h3 {
@@ -62,8 +63,14 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: rgb(0, 0, 0, 0.5);
-  padding-left: 160px;
-  padding-right: 160px;
+  padding-left: min(160px, 10%);
+  padding-right: min(160px, 10%);
+}
+
+.header-logo {
+  width: 100%;
+  max-width: 100px;
+  min-width: 60px;
 }
 
 nav {
@@ -93,4 +100,23 @@ nav {
 
 a:hover {
   color: rgb(255, 191, 0);
+}
+
+.kf-container,
+.menu-container {
+  background-color: black;
+  padding-left: min(160px, 10%);
+  padding-right: min(160px, 10%);
+}
+
+.kf-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.location-iframe {
+  width: 600px;
+  height: 450px;
+  border: 0;
 }
