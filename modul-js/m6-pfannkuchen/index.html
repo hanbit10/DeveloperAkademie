@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pfannkuchen</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table td,
+      table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      table tr:hover {
+        background-color: #ddd;
+      }
+
+      table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04aa6d;
+        color: white;
+      }
+
+      .adding-ingredient-container {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Rezept für Pfannkuchen</h1>
+    <button onclick="allIngredient()">Zutat laden</button>
+    <table id="table">
+      <tr>
+        <td>Menge</td>
+        <td>Name</td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>Eier</td>
+      </tr>
+    </table>
+    <section class="adding-ingredient-container">
+      <form action="">
+        <input type="text" id="amount" placeholder="amount" required />
+        <input type="text" id="ingredient" placeholder="ingredient" required />
+        <button type="submit" id="addButton" onclick="addIngredientInput()">
+          Add ingredient
+        </button>
+      </form>
+    </section>
+
+    <script>
+      function addIngredientInput() {
+        let menge = document.getElementById("amount").value;
+        let ingredient = document.getElementById("ingredient").value;
+        addIngredient(menge, ingredient);
+        document.getElementById("amount").value = "";
+        document.getElementById("ingredient").value = "";
+      }
+
+      function addIngredient(menge, name) {
+        document.getElementById("table").innerHTML += `
+        <tr>
+          <td>${menge}</td>
+          <td>${name}</td>
+        </tr>
+        `;
+        // ....innerHTML += ``;
+      }
+
+      function allIngredient() {
+        let menge = ["200g", "1 prise", "1 prise", "200g", "60ml"];
+        let name = ["Mehl", "Zucker", "Salz", "Milch", "Wasser"];
+
+        for (let i = 0; i < name.length; i++) {
+          addIngredient(menge[i], name[i]);
+          console.log(menge[i]);
+        }
+      }
+    </script>
+  </body>
+</html>

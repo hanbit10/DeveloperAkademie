@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <script>
+    function add() {
+      let x = +document.getElementById("number1").value;
+      let y = +document.getElementById("number2").value;
+
+      let result = x + y;
+
+      document.getElementById(
+        "result"
+      ).innerHTML = `Das ist das Ergebnis ${result}`;
+    }
+  </script>
+  <body>
+    <input id="number1" type="number" min="0" />
+    <input id="number2" type="number" />
+    <button onclick="add()">Addieren</button>
+    <div id="result"></div>
+  </body>
+</html>

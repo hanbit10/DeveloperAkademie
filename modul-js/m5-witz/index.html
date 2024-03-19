@@ -6,40 +6,31 @@
     <title>Joke</title>
     <style>
       .funny-image {
-        width: 30%
+        width: 30%;
       }
     </style>
   </head>
   <body>
     <h1>Programming-joke</h1>
-    <button onclick="joke1()">joke 1</button>
-    <button onclick="joke2()">joke 2</button>
-    <button onclick="joke3()">joke 3</button>
-    <p id="joke">
-      Die Selbsthilfegruppe "HTML-Sonderzeichen-Probleme" trifft sich heute im
-      groszlig ; en Saal.
-    </p>
+
+    <button onclick="greet('Hanbit')">Greet Hanbit</button>
+    <button onclick="greet('Max')">Greet Max</button>
+    <br />
+    <input type="text" id="namefield" />
+    <button onclick="greetFromTextField()">Greeting</button>
+
+    <p id="greeting"></p>
 
     <script>
-      function joke1() {
-        document.getElementById("joke").innerHTML =
-          `Why did the programmer quit his job? Because he didn't get <b>arrays!<b>
-          <br>
-          lustier Witz!
-          <br>
-          <img class="funny-image" src="./img/laugh.jpg" >
-          `
-      
+      function greetFromTextField() {
+        let name = document.getElementById("namefield").value;
+        greet(name);
       }
 
-      function joke2() {
-        document.getElementById("joke").innerHTML =
-          "Why was the JavaScript developer sad? Because he didn't know how to null his feelings.";
-      }
-
-      function joke3() {
-        document.getElementById("joke").innerHTML =
-          "What happens when there are 8 Hanbit? Hanbyte";
+      function greet(x) {
+        document.getElementById(
+          "greeting"
+        ).innerHTML = `Hallo ${x}, wie geht es dir?`;
       }
     </script>
   </body>
