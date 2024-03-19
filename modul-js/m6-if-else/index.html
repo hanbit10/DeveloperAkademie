@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      img {
+        width: 1024px;
+      }
+    </style>
+
+    <script>
+      let images = [
+        "./img/ocean.jpg",
+        "./img/mountain.jpg",
+        "./img/forest.jpg",
+      ];
+      let currentImage = 0;
+
+      function start() {
+        showImage(currentImage);
+        let miliseconds = +document.getElementById("inputfield").value * 1000;
+
+        if (miliseconds > 10000) {
+          alert("Bitte kleinere Zahl gleich als 10 eingeben");
+        } else if (miliseconds < 1000) {
+          alert("Bitte midestens eine Sekunde als Zeit angeben!");
+        } else {
+          currentImage++;
+
+          if (currentImage == 3) {
+            currentImage = 0;
+          }
+
+          setTimeout(start, miliseconds);
+          console.log(miliseconds);
+        }
+      }
+
+      function showImage(i) {
+        document.getElementById("image").src = images[i];
+      }
+    </script>
+  </head>
+  <body>
+    <!-- <button onclick="image2()">Start!</button> -->
+    <input
+      type="number"
+      id="inputfield"
+      min="0"
+      placeholder="Wie viele Sekunden soll die Diashow gehen?"
+    />
+    <button onclick="start()">show Image</button>
+    <br />
+    <img id="image" src="./ocean.jpg" alt="" />
+  </body>
+</html>
