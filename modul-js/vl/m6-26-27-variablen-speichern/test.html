@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let names = [];
+
+      function loadName() {
+        //name = localStorage.getItem("name");
+        name = getArray("names");
+        document.getElementById(
+          "headline"
+        ).innerHTML = `Zuletzt war ${name} hier`;
+      }
+
+      function saveName() {
+        let name = document.getElementById("input").value;
+        //localStorage.setItem("name", name);
+        names.push(name);
+        //bei arrays nicht das nutzen weil es string wird
+        //localStorage.setItem("names", names);
+        setArray("names", names);
+        document.getElementById("headline").innerHTML = `Hallo ${names}`;
+      }
+
+      function setArray(key, array) {
+        localStorage.setItem(key, JSON.stringify(array));
+      }
+
+      //getArray('names') get Item and return as arrays
+      function getArray(key) {
+        return JSON.parse(localStorage.getItem(key));
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="headline"></h1>
+
+    <button onclick="loadName()">Wer war zuletzt hier?</button>
+    <input id="input" type="text" />
+    <button onclick="saveName()">Speichern</button>
+  </body>
+</html>

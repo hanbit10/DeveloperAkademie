@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Templates</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <h1>HTML Templates</h1>
+
+    <p>
+      1. In dem div-Container mit der ID <code>joke</code> sollen für jeden
+      Button verschiedene Witze angezeigt werden. Die Buttons "Witz 1" und "Witz
+      2" funktionieren bereits. <br /><br />
+      1.1. Implementiere die Funktion <code>joke3()</code> für den Button "Witz
+      3".
+
+      <br />
+      1.2. Füge einen weiteren Button "Witz 4" hinzu.
+    </p>
+
+    <button onclick="joke(1)">Witz 1</button>
+    <button onclick="joke(2)">Witz 2</button>
+    <button onclick="joke(3)">Witz 3</button>
+    <button onclick="joke(4)">Witz 4</button>
+
+    <div id="joke"></div>
+
+    <p>
+      2. Die verschiedenen Buttons fügen dem Container mit der ID
+      <code>food</code> verschiedene Früchte hinzu.
+      <br />
+      <br />
+      2.1. Füge einen weiteren Button "Drachenfrucht" hinzu, der diese Frucht
+      ebenfalls zu unserer Liste hinzufügt. <br />
+      2.2. Der Button <b>Alles löschen</b> ruft die Funktion
+      <code>deleteFruits()</code> auf. Was macht diese Funktion? Wie
+      funktioniert sie? <br />
+      2.3. Erkläre den Unterschied von <code>=</code> und <code>+=</code> <br />
+      2.4. Stelle die Früchte in der Liste fett dar. Bearbeite die Funktion
+      <code>addFruit(fruit)</code> so, dass jede Frucht in dem generierten HTML
+      Code mit einem <code>&lt;b&gt;&lt;/b&gt;</code> umgeben ist.
+    </p>
+
+    <div>
+      <button onclick="addFruit('Apfel')">Apfel</button>
+      <button onclick="addFruit('Banane')">Banane</button>
+      <button onclick="addFruit('Clementine')">Clementine</button>
+    </div>
+    <div>
+      <button onclick="deleteFruits()">Alles löschen</button>
+    </div>
+
+    <div id="food"></div>
+
+    <p>
+      3. Wir wollen HTML Code generieren! Der nachfolgende Button generiert
+      einen Kreis. Probiere ihn aus!
+      <br /><br />
+      3.1. Unser Kreis soll schöner aussehen: Füge ihm die CSS Eigenschaft
+      <code>box-shadow: -4px 9px 10px rgba(0, 0, 0,0.4);</code> hinzu.
+      <i>Tipp: Hierzu brauchst du kein JavaScript.</i> <br />
+      3.2. Unser Kreis soll nicht einfach nur "Kreis" heißen. Benenne das Wort
+      "Kreis" um in einen Namen, z.B. <b>Claus</b>. <br />3.3. Damit der Name
+      deutlicher zu sehen ist, sollte er <b>Fett</b> geschrieben werden.
+      Verwende dafür das &lt;b&gt;-Tag und füge den Namen in die Mitte ein.
+    </p>
+
+    <button onclick="generatedCircle()">Kreis generieren</button>
+
+    <div id="generatedHTML"></div>
+
+    <p>
+      4. Variablen helfen uns, unsere Templates noch weiter zu dynamisieren. In
+      dieser Aufgabe wollen wir unseren Kreis noch weiter optimieren.
+      <br /><br />
+      4.1. Die Funktion <code>generatedCircle()</code> aus Aufgabe 3 generiert
+      einen Kreis. Der Name soll nun durch eine Variable ersetzt werden. Ersetze
+      den Namen des Kreises durch die Variable ${name}.<br />
+      4.2. Füge einen Button hinzu, der den Wert der Variable
+      <code>name</code> zu "Henriette" ändert. Überprüfe, ob sich der Kreis noch
+      verändert.
+    </p>
+
+    <button id="nameGenerator" onclick="setName('Franz')">Franz</button>
+    <button id="nameGenerator" onclick="setName('Gundula')">Gundula</button>
+    <button id="nameGenerator" onclick="setName('Henriette')">Henriette</button>
+
+    <p>
+      5. Wir bauen einen Chat. Du kannst eine Nachricht in das Eingabefeld
+      schreiben und auf "senden" klicken. Anschließend wird dem Container mit
+      der ID <code>chat</code> ein neuer HTML Code hinzugefügt. Versuche die
+      Funktion nachzuvollziehen. <br /><br />
+      5.1. Sorge dafür, dass das Wort "Unbekannt" vor jeder Chat-Nachricht
+      <i>kursiv</i> angezeigt wird.
+      <i>Tipp: Verwende das HTML Tag <code>&lt;i&gt;</code></i> <br />5.2. Füge
+      ein weiteres Textfeld <b>vor</b> das Textfeld mit der ID
+      <code>message</code> ein. Verwende als ID <code>name</code> und als
+      Placeholder den Text <code>Namen eingeben...</code>. <br />5.3. Vor jeder
+      Chatnachricht steht aktuell das Wort <i>Unkekannt:</i>. Ersetze es durch
+      den Namen, der in das Textfeld aus der letzten Aufgabe eingetragen wurde.
+      <br />
+      5.4. Gebe den einzelnen div-Containern die CSS-Eigenschaft
+      <code>margin-bottom: 20px;</code> <br />
+      5.5. Wenn das Textfeld mit der ID <code>message</code> leer ist, kann eine
+      Nachricht immernoch gesendet werden. Sorge durch eine If-Abfrage dafür,
+      dass ein Textfeld mit der ID <code>message</code> IMMER ausgefüllt sein
+      muss.<br />
+      <i
+        >Tipp: mit <code>message.value.length</code> erhälst du die Länge des
+        Textes, der in das Textfeld geschrieben wurde.</i
+      >
+    </p>
+
+    <input type="text" id="message" placeholder="Nachricht eingeben..." />
+    <button onclick="sendMessage()">Senden</button>
+    <div id="chat"></div>
+  </body>
+</html>

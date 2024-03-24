@@ -12,7 +12,12 @@
 
       function calc() {
         let number = +document.getElementById("input").value;
-        console.log("result is", powerOftwo(number));
+//        let resultText = `The result of ${number}^2 is ${powerOftwo(number)}`;
+        alert(getResultText(number, powerOftwo(number)));
+      }
+
+      function getResultText(number, result) {
+        return `The result of ${number}^2 is ${result}`
       }
     </script>
   </head>

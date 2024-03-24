@@ -1,0 +1,29 @@
+body {
+  padding: 100px 200px;
+}
+
+#joke,
+#food {
+  margin-top: 20px;
+}
+
+p {
+  margin-top: 50px;
+}
+
+.circle {
+  margin-top: 20px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: red;
+  padding: 20px;
+  box-shadow: -4px 9px 10px rgba(0, 0, 0, 0.4);
+}
+
+.chat {
+  margin-bottom: 20px;
+}

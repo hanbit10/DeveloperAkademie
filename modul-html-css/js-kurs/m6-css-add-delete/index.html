@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .rectangle {
+      height:150px;
+      width:150px;
+      background-color: yellow;
+      margin: 8px;
+    }
+
+    .d-none {
+      display: none;
+    }
+
+  </style>
+
+  <script>
+    function hide(id) {
+      document.getElementById(id).classList.add('d-none')
+    }
+
+    function show(id) {
+      document.getElementById(id).classList.remove('d-none')
+    }
+  </script>
+
+</head>
+<body>
+  <button onclick="show('1')">1</button>
+  <button onclick="show('2')">2</button>
+  <button onclick="show('3')">3</button>
+  <button onclick="show('4')">4</button>
+  <div id="1" onclick="hide('1')" class="rectangle">1</div>
+  <div id="2" onclick="hide('2')" class="rectangle">2</div>
+  <div id="3" onclick="hide('3')" class="rectangle">3</div>
+  <div id="4" onclick="hide('4')" class="rectangle">4</div>
+</body>
+</html>
