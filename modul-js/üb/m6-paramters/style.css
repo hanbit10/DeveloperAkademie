@@ -1,0 +1,19 @@
+body {
+  padding: 100px 200px;
+}
+
+table {
+  border: 1px solid lightgray;
+  border-collapse: collapse;
+}
+
+table td,
+th {
+  min-width: 100px;
+  text-align: start;
+  padding: 4px;
+}
+
+p {
+  margin-top: 80px;
+}

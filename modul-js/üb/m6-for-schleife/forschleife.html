@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        padding: 100px 200px;
+      }
+
+      p {
+        margin-top: 64px;
+      }
+    </style>
+
+    <script src="script.js"></script>
+  </head>
+
+  <body onload="init()">
+    <h1>Übungen zur For-Schleife</h1>
+
+    <p>
+      Ziel dieser Übung ist es, die For-Schleife besser zu verstehen. Versuche,
+      alle Übungen selbstständig zu lösen.
+    </p>
+
+    <p>
+      1) Füge 10 <code>&lt;li&gt;</code> Elemente ein, um die Zahlen von 0 bis 9
+      darzustellen.
+    </p>
+    <ul id="list1"></ul>
+
+    <p>
+      2) Füge 5 <code>&lt;li&gt;</code> Elemente ein, um die Zahlen von 1 bis 5
+      darzustellen.
+    </p>
+    <ul id="list2"></ul>
+
+    <p>
+      3) Füge <code>&lt;li&gt;</code>-Elemente mit den Zahlen 0, 2, 4, 6, 8, 10
+      ein. Nutze eine For-Schleife dafür.
+    </p>
+    <ul id="list3"></ul>
+
+    <p>
+      4) Füge <code>&lt;li&gt;</code>-Elemente mit den Zahlen von 10 - 0 ein.
+      Tipp: mit <code>i--</code> verringerst du den Wert von i um 1.
+    </p>
+    <ul id="list4"></ul>
+
+    <p>
+      5) Füge <code>&lt;li&gt;</code>-Elemente mit allen Elementen aus dem Array
+      <code>fruits</code> ein.
+    </p>
+    <ul id="list5"></ul>
+
+    <p>
+      6) Füge alle Elemente aus dem Array <code>fruits</code> rückwärts ein.
+    </p>
+    <ul id="list6"></ul>
+
+    <p>
+      7) Füge jedes zweite Element aus dem Array <code>fruits</code> in die
+      Liste ein.
+    </p>
+    <ul id="list7"></ul>
+
+    <p>
+      8) Füge alle Elemente aus <code>fruits</code> und <code>amount</code> in
+      die Liste ein. Also <b>3x Apple</b>, <b>1x Banana</b> usw.
+    </p>
+    <ul id="list8"></ul>
+
+    <p>
+      9) Füge in das Array <code>fruits</code> die Frucht aus dem Textfeld mit
+      der ID <b>newfruit</b> hinzu.
+    </p>
+    <input id="newfruit" value="Orange" />
+    <button onclick="exercise9()">Hinzufügen</button>
+
+    <p>
+      10) Füge in das Array <code>fruits</code> die Frucht aus dem Textfeld mit
+      der ID <b>newfruit</b> hinzu. Zeige anschließend das gesamte Array in der
+      liste <code>list10</code> an.
+    </p>
+    <ul id="list10"></ul>
+  </body>
+</html>
