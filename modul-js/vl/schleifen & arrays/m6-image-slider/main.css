@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.slide-container {
+  width: 500px;
+  height: 350px;
+  background-color: white;
+  position: relative;
+
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  transform: translateX(100%);
+}
+
+.slider-image {
+  transition: transform 225ms ease-in-out;
+}
+
+.slider-start {
+  transform: translateX(0%);
+}
+
+.slider-btn-right {
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+}
+
+.slider-btn-left {
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+}

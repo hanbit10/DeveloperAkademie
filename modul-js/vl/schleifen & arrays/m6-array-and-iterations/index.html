@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let names = ["David", "Clara", "Christian"];
+      names.push("Petra");
+      console.log("hallo " + names[3]);
+
+      for (let i = 0; i < names.length; i++) {
+        console.log("Hallo " + names[i]);
+      }
+
+      function addNames() {
+        document.getElementById("lists").innerHTML = "";
+        for (let i = 0; i < names.length; i++) {
+          document.getElementById(
+            "lists"
+          ).innerHTML += `<li>Hallo ${names[i]} <button onclick="removeName(${i})">x</button> </li>`;
+        }
+      }
+
+      function addCurrentName() {
+        let newName = document.getElementById("new-name").value;
+        if (newName == "") {
+          alert("Its empty!");
+        } else if (names.length >= 7) {
+          alert("You can't edit anymore!");
+        } else {
+          document.getElementById("new-name").value = "";
+          names.push(newName);
+          addNames();
+        }
+      }
+
+      function removeName(i) {
+        names.splice(i, 1);
+
+        addNames();
+      }
+    </script>
+  </head>
+  <body onload="addNames()">
+    <ul id="lists"></ul>
+
+    <input id="new-name" placeholder="Gebe Namen" type="text" required />
+    <button onclick="addCurrentName()">Hinzufügen</button>
+  </body>
+</html>

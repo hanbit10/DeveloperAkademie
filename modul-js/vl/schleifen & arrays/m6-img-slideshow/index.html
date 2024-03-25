@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js"></script>
+    <style>
+      img {
+        position: absolute;
+        width: 1024px;
+        height: 1024px;
+        object-fit: cover;
+
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .d-none {
+        opacity: 0;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      onclick="hideImg1()"
+      id="image1"
+      class="d-none"
+      src="./img/forest.jpg"
+    />
+    <img
+      onclick="hideImg2()"
+      id="image2"
+      class="d-none"
+      alt=""
+      src="./img/mountain.jpg"
+    />
+    <img onclick="hideImg3()" id="image3" alt="" src="./img/ocean.jpg" />
+  </body>
+</html>

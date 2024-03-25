@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      overflow-x: hidden;
+      position: relative;
+    }
+    .menu {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      width: 50px;
+      cursor: pointer;
+    }
+
+    .overlay-menu {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      height: 100vh;
+      right: 0;
+      top: 0;
+      z-index: 2;
+      background-color: white;
+      border-left: 1px solid black;
+      transform: translateX(501px);
+      transition: all 225ms ease-in-out;
+    }
+
+    .show-overlay-menu {
+      transform: translateX(0);
+    }
+
+    .close-btn {
+      position: absolute;
+      right: 16px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        position: relative;
+        overflow-x: hidden;
+      }
+    }
+  </style>
+
+  <script>
+    function showMenu() {
+      document
+        .getElementById("overlay-menu")
+        .classList.add("show-overlay-menu");
+    }
+
+    function closeMenu() {
+      document
+        .getElementById("overlay-menu")
+        .classList.remove("show-overlay-menu");
+    }
+  </script>
+
+  <body>
+    <div class="container">
+      <h1>Responsive Menu</h1>
+
+      <img
+        onclick="showMenu()"
+        class="menu"
+        src="./menu-svgrepo-com.svg"
+        alt=""
+      />
+
+      <div id="overlay-menu" class="overlay-menu">
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <button onclick="closeMenu()" class="close-btn">Close</button>
+      </div>
+
+      <div class="hello-container">hello</div>
+    </div>
+  </body>
+</html>
