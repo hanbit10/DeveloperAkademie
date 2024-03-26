@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .post {
+        width: 500px;
+        height: 200px;
+        border: 1px solid lightgray;
+        padding: 8px;
+        margin-top: 32px;
+      }
+    </style>
+    <script>
+      let posts = [];
+      let names = [];
+      function addPost() {
+        let text = document.getElementById("neuerpost");
+        let name = document.getElementById("name");
+        posts.push(text.value);
+        names.push(name.value);
+
+        let myPost = document.getElementById("myposts");
+
+        myPost.innerHTML = "";
+        for (let i = 0; i < posts.length; i++) {
+          myPost.innerHTML += `<div class="post">${names[i]} <br>
+            ${posts[i]}</div> `;
+        }
+
+        text.value = "";
+        name.value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <input id="name" type="text" placeholder="Dein Name" />
+    <input id="neuerpost" type="text" placeholder="Neuer Post" />
+    <button onclick="addPost()">Posten</button>
+
+    <div id="myposts"></div>
+  </body>
+</html>
