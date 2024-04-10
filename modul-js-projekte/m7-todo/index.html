@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+  , initial-scale=1.0"
+    />
+    <title>Document</title>
+
+    <script>
+      let todos = ["drink", "sleep", "study"];
+
+      function render() {
+        for (let i = 0; i < todos.length; i++) {
+          document.getElementById("content").innerHTML += `<div>Todo ${
+            i + 1
+          }</div>`;
+        }
+      }
+    </script>
+  </head>
+  <body onload="render()">
+    <div id="content"></div>
+  </body>
+</html>
