@@ -22,5 +22,34 @@
   </head>
   <body onload="init()">
     <div id="image-container"></div>
+    <svg width="200" height="200">
+      <!-- Background circle -->
+      <circle cx="100" cy="100" r="40" stroke="#E0E0E0" stroke-width="10" fill="none" />
+
+      <!-- Loading bar -->
+      <circle
+        cx="100"
+        cy="100"
+        r="40"
+        stroke="#FD5B4F"
+        stroke-width="10"
+        stroke-dasharray="calc(251.327 * 0.1) calc(251.327 * 1)"
+        stroke-dashoffset="calc(251.327 * 0.1)"
+        stroke-linecap="round"
+        fill="none"
+        transform="rotate(-90, 100, 100)"
+      >
+        <animate
+          attributeName="stroke-dashoffset"
+          dur="0.5s"
+          from="calc(251.327 * 0.1)"
+          to="0"
+          fill="freeze"
+          calcMode="spline"
+          keySplines="0.25 0.1 0.25 1"
+          keyTimes="0;1"
+        />
+      </circle>
+    </svg>
   </body>
 </html>
