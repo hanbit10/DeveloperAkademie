@@ -1,0 +1,251 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+html {
+    font-size: 6.25%;
+    /* 1rem = 1px */
+}
+
+h1 {
+    font-size: 30rem;
+}
+
+h2 {
+    font-size: 25rem;
+}
+
+h3 {
+    font-size: 20rem;
+}
+
+span {
+    font-size: 15rem;
+}
+
+.underline {
+    padding-bottom: 3px;
+    border-bottom: 3px solid black;
+}
+
+.invert-color {
+    filter: invert();
+}
+
+.d-none {
+    display: none;
+}
+
+/********************************************************               Header              ***********************************************/
+.header {
+    display: flex;
+    height: 8vh;
+    background-color: orange;
+}
+
+.header-child {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    padding: 0 50rem;
+}
+
+.menu-button {
+    height: 30rem;
+}
+
+.country-button {
+    height: 30rem;
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+    border-radius: 50%;
+}
+
+/**********************************************           Main Container             *********************/
+.main-container {
+    display: flex;
+    width: 100%;
+}
+
+.main-child {
+    width: 100%;
+}
+
+.bg-img {
+    height: 23vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: 100% 42%;
+}
+
+.restaurant {
+    margin: 0 10%;
+    color: #181940fa;
+    ;
+}
+
+.restaurant-about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30rem 0;
+}
+
+.restaurant-about h1 {
+    margin-bottom: 10rem;
+}
+
+.rating img {
+    height: 17rem;
+    margin-right: 5rem;
+}
+
+.filter {
+    filter: contrast(0.1);
+}
+
+.info-like-button img {
+    height: 45rem;
+    padding: 12px;
+    object-fit: contain;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.dish {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 10rem;
+}
+
+.dish:hover{
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.dish > * {
+    margin-left: 10rem;
+}
+
+.dish h3 {
+    padding-top: 10rem;
+}
+
+.dish-descript span {
+    font-size: 15rem;
+}
+
+.dish-descript {
+        margin: 10rem 0;
+}
+
+.dish-price {
+    color: orange;
+    margin-bottom: 10rem;
+}
+
+.dish-price span {
+    font-size: 20rem;
+    font-weight: 800;
+}
+
+.add-button {
+    height: 35rem;
+    margin-left: 5rem;
+    padding: 5rem;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.change-color {
+    border-color: black;
+}
+
+
+/**********************************************        Basket Container       *************************/
+
+.basket-container {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    width: 350px;
+    height: 100vh;
+    color: #020202cc;
+    box-shadow: -1em 0em 3em -1em rgb(45 45 45 / 27%);
+}
+
+.cash {
+    text-align: center;
+    height: fit-content;
+    width: inherit;
+    padding: 18rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.empty-basket {
+    margin-top: 100rem;
+}
+
+.empty-basket>* {
+    margin-bottom: 10rem;
+}
+
+.empty-basket img {
+    filter: contrast(0.7);
+}
+
+.full-basket {
+    margin: 20rem 20em;
+}
+
+.order {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20rem;
+    padding-bottom: 20rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.order span {
+    text-align: start;
+    width: min-content;
+}
+
+.plus-minus-button {
+    display: flex;   
+}
+
+.checkout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50rem;
+}
+
+.checkout-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15rem;
+}
+
+.checkout-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15rem;
+}

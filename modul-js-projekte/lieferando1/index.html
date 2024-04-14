@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+</head>
+<script src="script.js"></script>
+<body onload="render()">
+    <header class="header">
+        <div class="header-child">
+            <div class="header-logo">
+                <img class="invert-color" src="images/logo.png" alt="">
+                <h3 class="invert-color">lassanderekochen.de</h3>
+            </div>
+            <h3 class="invert-color underline">Hauptstraße 1, Berlin</h3>
+            <div class="header-logo">
+                <!--  <img class="country-button" src="images/Germany.png" alt=""> -->
+                <img class="invert-color menu-button" src="images/menu.png" alt="">
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="main-child">
+            <img src="images/salad.jpg" class="bg-img" alt="">
+            <div class="restaurant">
+                <div class="restaurant-about">
+                    <div>
+                        <h1>die Kantine</h1>
+                        <span>Ab 99 € keine Lieferkosten!</span>
+                        <div class="rating">
+                            <img src="images/star-orange.png" alt="">
+                            <img src="images/star-black.png" class="filter" alt="">
+                            <img src="images/star-black.png" class="filter" alt="">
+                            <img src="images/star-black.png" class="filter" alt="">
+                            <img src="images/star-black.png" class="filter" alt="">
+                            <span>(2 Bewertungen)</span>
+                        </div>
+                    </div>
+                    <div class="info-like-button">
+                        <img src="images/info.png" alt="">
+                        <img src="images/favorite.png" alt="">
+                    </div>
+                </div>
+                
+                <div class="dishes" id="dishes">
+                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore tenetur cupiditate iusto
+                        totam, adipisci eum quisquam porro sapiente ea cumque repellendus incidunt excepturi
+                        perferendis, placeat ut autem doloribus reprehenderit. Ipsa.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="sticky">
+            <div class="basket-container">
+                <h3 class="cash">Warenkorb</h3>
+                <div class="empty-basket" id="emptyBasket">
+                    <img src="images/shoppingbasket.png" alt="">
+                    <h3>Dein Warenkor ist leer!</h3>
+                    <span>Füge etwas deinem Warenkorb hinzu, um dir etwas kochen zu lassen.</span>
+                </div>
+                <div class="full-basket" id="fullBasket">
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+</body>
+
+</html>
