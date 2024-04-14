@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js"></script>
+    <style>
+      .gallery-image {
+        width: 100px; /* Adjust as needed */
+        height: 100px; /* Adjust as needed */
+        margin: 10px; /* Adjust as needed */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        object-fit: cover;
+        display: flex;
+        flex-wrap: wrap;
+        cursor: pointer;
+        transition: transform 0.1s ease-in-out;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body onload="init()">
+    <div id="image-container"></div>
+  </body>
+</html>
