@@ -18,7 +18,7 @@ function render() {
     const name = dishName[i];
     const descript = dishDescript[i];
     const price = dishPrice[i];
-    dishes.innerHTML += generateMainHTML(name, descript, price);
+    dishes.innerHTML += generateMainHTML(name, descript, price, i);
   }
 }
 
@@ -86,34 +86,33 @@ function renderBasket() {
 }
 
 function changeColorOnclick(i) {
-  addButton = document.getElementById("addButton");
+  addButton = document.getElementById(`addButton_${i}`);
   addButton.classList.add("change-color");
-  setTimeout(changeColorToOrigin, 150);
+  setTimeout(changeColorToOrigin(i), 150);
 }
 
 function changeColorToOrigin(i) {
-  addButton = document.getElementById("addButton");
+  addButton = document.getElementById(`addButton_${i}`);
   addButton.classList.remove("change-color");
 }
 
 //////////////////////////////////////////////////// Generate HTML ////////////////////////////////////////////////////
 
-function generateMainHTML(name, descript, price) {
+function generateMainHTML(name, descript, price, index) {
   return /* html */ `
-                    <div class="dish">
-                        <div>
-                            <h3>${name}</h3>
-                            <div class="dish-descript">
-                                <span>${descript}</span>
-                            </div>
-                            <div class="dish-price">    
-                                <span>${price.toFixed(2)} €</span>
-                            </div>
-                         </div>
-                            <img src="images/plus.png" class="add-button" id="addButton" onclick="addToBasket(${i})" alt="">
-                    </div>
-
-                    `;
+    <div class="dish">
+      <div>
+        <h3>${name}</h3>
+        <div class="dish-descript">
+          <span>${descript}</span>
+        </div>
+        <div class="dish-price">    
+          <span>${price.toFixed(2)} €</span>
+        </div>
+      </div>
+      <img src="images/plus.png" class="add-button" id="addButton_${index}" onclick="addToBasket(${index})" alt="">
+    </div>
+  `;
 }
 
 function generateSingleBasketDishHTML(i) {
