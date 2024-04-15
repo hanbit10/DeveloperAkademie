@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      async function getSynonyms() {
+        let url = "https://www.openthesaurus.de/synonyme/search?q=programmieren&format=application/json"; //url holen
+        let response = await fetch(url); //fetch url
+        let getJSON = await response.json(); //get as json file
+        let synsets = getJSON["synsets"]; // frrom getJSON get "synsets"
+        renderSynsets(synsets);
+        console.log("Response is:", synsets);
+      }
+
+      function renderSynsets(synsets) {
+        let container = document.getElementById("container");
+        container.innerHTML = /*html*/ `<div>Es wurden <b>${synsets.length}</b> Synonym-sets geladen</div>`;
+
+        for (let i = 0; i < synsets.length; i++) {
+          const synset = synsets[i];
+          let terms = synset["terms"]; //Ist ein Array
+          console.log("this is terms: ", terms);
+          container.innerHTML += `<h2>Synonym-Set mit ID ${synset["id"]}</h2>`;
+
+          for (let j = 0; j < terms.length; j++) {
+            const term = terms[j];
+            container.innerHTML += `<div>${term["term"]}</div>`;
+            console.log("this is each term: ", term);
+          }
+        }
+      }
+    </script>
+  </head>
+  <body onload="getSynonyms()">
+    <button onclick="getSynonyms()">Get Synonyms</button>
+    <div id="container"></div>
+  </body>
+</html>
