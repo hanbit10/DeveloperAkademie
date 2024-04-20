@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./script.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        width: 100%;
+        height: 80px;
+        border-bottom: 1px solid #dddddd;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1024px;
+      }
+
+      .title {
+        padding: 5px;
+        padding-left: 20px;
+        margin: 5px;
+        margin-top: 20px;
+        color: #666666;
+        background-color: #dddddd;
+        font-weight: bolder;
+      }
+
+      .bundesland-content {
+        margin: 5px;
+        padding: 10px;
+        border: 10px solid #dddddd;
+      }
+
+      .bundesland-card {
+        width: 33.333%;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      #content {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      #filter-content {
+        width: 100%;
+
+        display: flex;
+      }
+
+      .filter-btn {
+        width: 30px;
+        aspect-ratio: 1/1;
+        margin: 5px;
+        background-color: #dddddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .bundesland-name {
+        color: black;
+      }
+
+      .bundesland-population {
+        color: #adaba8;
+      }
+
+      @media screen and (max-width: 800px) {
+        .bundesland-card {
+          width: 50%;
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        .bundesland-card {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body onload="init()">
+    <header></header>
+    <div class="container">
+      <section class="title">
+        <h1 onclick="restore()">BUNDESLÄNDER</h1>
+      </section>
+      <section id="content"></section>
+
+      <section id="filter-content"></section>
+    </div>
+  </body>
+</html>
