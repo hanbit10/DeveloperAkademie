@@ -17,6 +17,7 @@
       function render(filter) {
         let content = document.getElementById("content");
         content.innerHTML = "";
+        console.log(filter);
 
         for (let i = 0; i < bundeslaender.length; i++) {
           const land = bundeslaender[i];
@@ -45,7 +46,7 @@
 
         for (let i = 0; i < letters.length; i++) {
           const letter = letters[i];
-          letterbox.innerHTML += `<div onclick="setFilter('${letter}')" class="letter">${letter}</div>`;
+          letterbox.innerHTML += `<div onclick="render('${letter}')" class="letter">${letter}</div>`;
         }
       }
 
