@@ -1,9 +1,15 @@
 let users = [];
 
+/**
+ * Init function
+ */
 async function init() {
   loadUsers();
 }
 
+/**
+ * load all the Users with getItem function
+ */
 async function loadUsers() {
   try {
     users = JSON.parse(await getItem("users"));
@@ -12,6 +18,9 @@ async function loadUsers() {
   }
 }
 
+/**
+ * register a user in the storage
+ */
 async function register() {
   users.push({
     email: email.value,
@@ -21,6 +30,9 @@ async function register() {
   resetForm();
 }
 
+/**
+ *  resets the Form
+ */
 function resetForm() {
   email.value = "";
   password.value = "";
