@@ -66,7 +66,7 @@ function addEventListeners() {
   dragListItems.forEach((item) => {
     item.addEventListener("dragover", dragOver);
     item.addEventListener("drop", dragDrop);
-    item.addEventListener("dropenter", dragEnter);
+    item.addEventListener("dragenter", dragEnter);
     item.addEventListener("dragleave", dragLeave);
   });
 }
