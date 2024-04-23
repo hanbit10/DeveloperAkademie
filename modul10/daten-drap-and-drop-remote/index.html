@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .drag-area {
+        width: 600px;
+        height: 150px;
+        margin: 20px;
+        background-color: #aa3a3a;
+      }
+
+      .drag-area-highlight {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      .todo {
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body onload="init()">
+    <div
+      class="drag-area"
+      id="open"
+      ondrop="moveTo('open')"
+      ondragover="allowDrop(event); highlight('open')"
+      ondragleave="removeHighlight('open')"
+    ></div>
+
+    <div
+      class="drag-area"
+      id="closed"
+      ondrop="moveTo('closed')"
+      ondragleave="removeHighlight('closed')"
+      ondragover="allowDrop(event); highlight('closed')"
+    ></div>
+    <script src="script.js"></script>
+  </body>
+</html>
