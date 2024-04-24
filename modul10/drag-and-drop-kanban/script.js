@@ -6,32 +6,29 @@ const droppables = document.querySelectorAll(".swim-lane");
 
 let tasks = [
   {
+    id: 2,
     task: "hello",
     lane: "todo-lane",
   },
+  { id: 1, task: "this is task", lane: "todo-lane" },
+  { id: 2, task: "this is cool", lane: "doing-lane" },
+  { id: 1, task: "this is awesome", lane: "doing-lane" },
   {
-    task: "this is task",
-    lane: "todo-lane",
-  },
-  {
-    task: "this is cool",
-    lane: "doing-lane",
-  },
-  {
-    task: "this is awesome",
-    lane: "doing-lane",
-  },
-  {
+    id: 2,
     task: "this is done-lane",
     lane: "done-lane",
   },
   {
+    id: 1,
     task: "this is great!",
     lane: "done-lane",
   },
 ];
 
 function init() {
+  if (localStorage.getItem("tasks") !== null) {
+    getTasks();
+  }
   renderTasks("todo-lane");
   renderTasks("doing-lane");
   renderTasks("done-lane");
@@ -40,7 +37,7 @@ function init() {
 function renderTasks(id) {
   let element = document.getElementById(id);
   let todo = tasks.filter((t) => t["lane"] == id);
-
+  todo.sort((a, b) => a.id - b.id);
   for (let i = 0; i < todo.length; i++) {
     let task = todo[i]["task"];
     const newTask = document.createElement("p");
@@ -100,12 +97,16 @@ droppables.forEach((zone) => {
     e.preventDefault();
     const bottomTask = insertAboveTask(zone, e.clientY);
     const curTask = document.querySelector(".is-dragging");
-
+    const taskToUpdate = tasks.find((taskObj) => taskObj.task === curTask.textContent);
+    if (taskToUpdate) {
+      taskToUpdate.lane = zone.id;
+    }
     if (!bottomTask) {
       zone.appendChild(curTask);
     } else {
       zone.insertBefore(curTask, bottomTask);
     }
+    saveTasks();
   });
 });
 
@@ -128,3 +129,12 @@ const insertAboveTask = (zone, mouseY) => {
 
   return closestTask;
 };
+
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function getTasks() {
+  let item = localStorage.getItem("tasks");
+  tasks = JSON.parse(item);
+}
