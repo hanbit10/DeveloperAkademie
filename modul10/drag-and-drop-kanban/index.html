@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="drag.js" defer></script>
-    <script src="script.js" defer></script>
   </head>
-  <body>
+  <body onload="init()">
     <div class="board">
       <form id="todo-form">
         <input type="text" placeholder="New TODO..." id="todo-input" />
@@ -18,29 +16,18 @@
       <div class="lanes">
         <div class="swim-lane" id="todo-lane">
           <h3 class="heading">TODO</h3>
-          <p class="task" draggable="true">Get groceries</p>
-          <p class="task" draggable="true">Todo</p>
-          <p class="task" draggable="true">123</p>
         </div>
-      </div>
 
-      <div class="lanes">
         <div class="swim-lane" id="doing-lane">
           <h3 class="heading">Doing</h3>
-          <p class="task" draggable="true">Get groceries</p>
-          <p class="task" draggable="true">Todo</p>
-          <p class="task" draggable="true">123</p>
         </div>
-      </div>
 
-      <div class="lanes">
         <div class="swim-lane" id="done-lane">
           <h3 class="heading">Done</h3>
-          <p class="task" draggable="true">Get groceries</p>
-          <p class="task" draggable="true">Todo</p>
-          <p class="task" draggable="true">123</p>
         </div>
       </div>
     </div>
+    <script src="script.js" defer></script>
+    <!-- <script src="drag.js" defer></script> -->
   </body>
 </html>
