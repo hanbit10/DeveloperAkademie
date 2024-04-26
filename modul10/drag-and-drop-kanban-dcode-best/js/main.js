@@ -1,5 +1,5 @@
-import kanbanAPI from "./api/kanbanAPI.js";
-import Kanban from "./view/kanban.js";
+import kanbanAPI from "./api/KanbanAPI.js";
+import Kanban from "./view/Kanban.js";
 
 // console.log(kanbanAPI.getItems(1));
 
