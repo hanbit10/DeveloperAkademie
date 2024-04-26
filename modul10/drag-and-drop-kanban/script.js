@@ -103,9 +103,24 @@ droppables.forEach((zone) => {
     }
     if (!bottomTask) {
       zone.appendChild(curTask);
+      let todo = tasks.filter((t) => t["lane"] == zone.id);
+      // console.log(tasks);
+
+      console.log(zone);
+      // console.log(curTask);
+      // console.log(taskToUpdate.id);
+
+      taskToUpdate.id = todo.length;
+      // for (let i = 0; i < todo.length - 1; i++) {}
+      // console.log(todo.length);
     } else {
       zone.insertBefore(curTask, bottomTask);
     }
+    tasks.forEach((task) => {
+      if (task.lane === "doing-lane") {
+        task.id -= 1;
+      }
+    });
     saveTasks();
   });
 });
