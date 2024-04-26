@@ -4,6 +4,7 @@ import KanbanAPI from "../api/KanbanAPI.js";
 export default class Item {
   constructor(id, content) {
     const bottomDropZone = DropZone.createDropZone();
+    console.log("this is bottom", bottomDropZone);
 
     this.elements = {};
     this.elements.root = Item.createRoot();
@@ -13,7 +14,6 @@ export default class Item {
     this.elements.input.textContent = content;
     this.content = content;
     this.elements.root.appendChild(bottomDropZone);
-
     const onBlur = () => {
       const newContent = this.elements.input.textContent.trim();
 
@@ -31,7 +31,6 @@ export default class Item {
     this.elements.input.addEventListener("blur", onBlur);
     this.elements.root.addEventListener("dblclick", () => {
       const check = confirm("Are you sure you want to delete this item?");
-
       if (check) {
         KanbanAPI.deleteItem(id);
 
