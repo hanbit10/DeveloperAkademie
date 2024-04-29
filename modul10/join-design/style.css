@@ -1,0 +1,26 @@
+.contact-button {
+  /* Property 1="Default"; */
+  width: 255px;
+  height: 56 px;
+  padding: 12px 16px 12px 16px;
+  gap: 16px;
+  border-radius: 10px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  background: #2a3647;
+  border: 1px solid #2a3647;
+  border-radius: 10px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #2a3647;
+}
+
+.container {
+  width: 1440px;
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
