@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" onsubmit="login(); return false">
+      <input type="email" required id="email" autocomplete="username" />
+      <input type="password" required id="password" autocomplete="new-password" />
+      <button>Login</button>
+    </form>
+
+    <div id="msgBox"></div>
+
+    <script src="script.js"></script>
+    <script>
+      function login() {
+        let email = document.getElementById("email");
+        let password = document.getElementById("password");
+        let user = users.find((u) => u.email == email.value && u.password == password.value);
+        console.log(user);
+        if (user) {
+          console.log("user gefunden");
+        }
+      }
+      const urlParams = new URLSearchParams(window.location.search);
+      const msg = urlParams.get("msg");
+      if (msg) {
+        msgBox.innerHTML = msg;
+      } else {
+      }
+    </script>
+  </body>
+</html>
