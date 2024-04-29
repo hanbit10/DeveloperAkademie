@@ -4,7 +4,6 @@ import KanbanAPI from "../api/KanbanAPI.js";
 export default class Item {
   constructor(id, content) {
     const bottomDropZone = DropZone.createDropZone();
-    console.log("this is bottom", bottomDropZone);
 
     this.elements = {};
     this.elements.root = Item.createRoot();
@@ -40,6 +39,7 @@ export default class Item {
     });
 
     this.elements.root.addEventListener("dragstart", (e) => {
+      console.log(e);
       e.dataTransfer.setData("text/plain", id);
     });
 

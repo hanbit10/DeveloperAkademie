@@ -4,8 +4,6 @@ export default class DropZone {
   static createDropZone() {
     const range = document.createRange();
 
-    console.log(document.body);
-
     range.selectNode(document.body);
 
     const dropZone = range.createContextualFragment(`
@@ -14,7 +12,6 @@ export default class DropZone {
 
     dropZone.addEventListener("dragover", (e) => {
       e.preventDefault();
-      console.log("dragover");
       dropZone.classList.add("kanban__dropzone--active");
     });
 
@@ -30,15 +27,15 @@ export default class DropZone {
       const columnId = Number(columnElement.dataset.id);
       const dropZonesInColumn = Array.from(columnElement.querySelectorAll(".kanban__dropzone"));
       const droppedIndex = dropZonesInColumn.indexOf(dropZone);
-      console.log(droppedIndex);
       const itemId = Number(e.dataTransfer.getData("text/plain"));
       const droppedItemElement = document.querySelector(`[data-id="${itemId}"]`);
       const insertAfter = dropZone.parentElement.classList.contains("kanban__item") ? dropZone.parentElement : dropZone;
-
       if (droppedItemElement.contains(dropZone)) {
         return;
       }
-
+      console.log(columnId);
+      console.log(itemId);
+      console.log(droppedIndex);
       insertAfter.after(droppedItemElement);
       KanbanAPI.updateItem(itemId, {
         columnId,

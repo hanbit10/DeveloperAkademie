@@ -1,9 +1,10 @@
 #kanban {
   display: flex;
   padding: 30px;
-  width: 750px;
-  background: #009578;
+  width: 1250px;
+  background: #ffffff94;
   border-radius: 5px;
+  border: 1px solid #7e7e7e94;
 }
 
 #kanban * {
@@ -11,6 +12,8 @@
 }
 
 .kanban-container {
+  display: flex;
+  flex-direction: column;
   flex: 1;
 }
 
@@ -21,14 +24,14 @@
 .kanban-title {
   margin-bottom: 20px;
   font-size: 30px;
-  color: white;
+  color: rgb(0, 0, 0);
   user-select: none;
 }
 
 .kanban-item-input {
   padding: 10px 15px;
   box-sizing: border-box;
-  background: white;
+  background: rgb(201, 201, 201);
   border-radius: 5px;
   cursor: pointer;
 }
@@ -47,8 +50,8 @@
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: white;
-  background: rgba(0, 0, 0, 0.1);
+  color: rgb(0, 0, 0);
+  background: rgba(90, 90, 90, 0.712);
   border: none;
   border-radius: 5px;
   cursor: pointer;
