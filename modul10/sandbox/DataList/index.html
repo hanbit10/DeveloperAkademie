@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <label>Your Cars Name: </label>
+      <input list="cars" />
+      <datalist id="cars">
+        <option value="BMW" />
+        <option value="Bentley" />
+        <option value="Mercedes" />
+        <option value="Audi" />
+        <option value="Volkswagen" />
+      </datalist>
+    </form>
+
+    <select>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+    <script>
+      function show() {
+        // get selected value and store it in val
+        var val = document.getElementsByTagName("select")[0].value;
+        // show selected value
+        console.log("You have chosen " + val);
+      }
+      //now, you can invoke show() method as per your requirement.
+      document.getElementsByTagName("select")[0].addEventListener("change", function () {
+        show();
+      });
+    </script>
+  </body>
+</html>

@@ -43,8 +43,8 @@ function getKanbanContainer(id) {
   <div class="kanban-container" >
     <div id="kanban-title-${id}" class="kanban-title"></div>
       <div id="${id}" class="kanban-content">
-      <div ondragover="allowDrop(event)" id="dropzone" class="kanban-dropzone"></div>
-    </div>
+        <div ondragover="allowDrop(event)" id="dropzone" class="kanban-dropzone"></div>
+      </div>
       <button onclick="addContent(${id})" class="kanban-add-item" type="button">+ Add</button>
     </div>
   </div>`;
