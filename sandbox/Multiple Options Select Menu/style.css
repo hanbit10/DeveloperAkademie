@@ -27,12 +27,14 @@ body {
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-.select-btn .btn-text {
+
+.btn-text {
   font-size: 17px;
   font-weight: 400;
   color: #333;
 }
-.select-btn .arrow-dwn {
+
+.arrow-dwn {
   display: flex;
   height: 21px;
   width: 21px;
@@ -44,7 +46,7 @@ body {
   justify-content: center;
   transition: 0.3s;
 }
-.arrow-dwn {
+.select-btn.open .arrow-dwn {
   transform: rotate(-180deg);
 }
 .list-items {
@@ -52,11 +54,13 @@ body {
   border-radius: 8px;
   padding: 16px;
   background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   display: none;
 }
 .select-btn.open ~ .list-items {
   display: block;
 }
+
 .item {
   display: flex;
   align-items: center;
@@ -67,15 +71,15 @@ body {
   padding: 0 15px;
   border-radius: 8px;
 }
-.list-items .item:hover {
+.item:hover {
   background-color: #e7edfe;
 }
-.item .item-text {
+.item-text {
   font-size: 16px;
   font-weight: 400;
   color: #333;
 }
-.item .checkbox {
+.checkbox {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,7 +94,7 @@ body {
   background-color: #4070f4;
   border-color: #4070f4;
 }
-.checkbox .check-icon {
+.check-icon {
   color: #fff;
   font-size: 11px;
   transform: scale(0);
