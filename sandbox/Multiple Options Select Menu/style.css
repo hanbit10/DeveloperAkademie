@@ -12,13 +12,13 @@ body {
 }
 .container {
   position: relative;
-  max-width: 320px;
+  max-width: 440px;
   width: 100%;
   margin: 80px auto 30px;
 }
 .select-btn {
   display: flex;
-  height: 50px;
+  height: 48px;
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
@@ -34,28 +34,27 @@ body {
   color: #333;
 }
 
-.arrow-dwn {
-  display: flex;
-  height: 21px;
-  width: 21px;
-  color: #fff;
-  font-size: 14px;
-  border-radius: 50%;
-  background: #6e93f7;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
+.arrow-down {
+  width: 24px;
+  height: 24px;
+  background-image: url("./arrow_drop_down.svg");
+  background-size: cover;
 }
-.select-btn.open .arrow-dwn {
-  transform: rotate(-180deg);
+
+.select-btn.open .arrow-down {
+  width: 24px;
+  height: 24px;
+  background-image: url("./arrow_drop_up.svg");
+  background-size: cover;
 }
+
 .list-items {
   position: relative;
-  border-radius: 8px;
-  padding: 16px;
+  height: 200px;
+
   background-color: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   display: none;
+  overflow-y: scroll;
 }
 .select-btn.open ~ .list-items {
   display: block;
@@ -64,6 +63,7 @@ body {
 .item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   list-style: none;
   height: 50px;
   cursor: pointer;
@@ -79,27 +79,25 @@ body {
   font-weight: 400;
   color: #333;
 }
-.checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 16px;
-  width: 16px;
-  border-radius: 4px;
-  margin-right: 12px;
-  border: 1.5px solid #c0c0c0;
-  transition: all 0.3s ease-in-out;
+
+.check-img {
+  width: 24px;
+  height: 24px;
+  background-image: url("./checkBtn.svg");
+  background-size: cover;
 }
-.item.checked .checkbox {
-  background-color: #4070f4;
-  border-color: #4070f4;
+
+.item.checked .check-img {
+  width: 24px;
+  height: 24px;
+  background-image: url("./checkedBtn.svg");
+  background-size: cover;
 }
-.check-icon {
+
+.item.checked {
+  background-color: #2a3647;
+}
+
+.item.checked .item-text {
   color: #fff;
-  font-size: 11px;
-  transform: scale(0);
-  transition: all 0.2s ease-in-out;
-}
-.item.checked .check-icon {
-  transform: scale(1);
 }
