@@ -10,12 +10,14 @@
 body {
   background-color: #e3f2fd;
 }
-.container {
+.assigned-editCard,
+.category-editCard {
   position: relative;
   max-width: 440px;
   width: 100%;
   margin: 80px auto 30px;
 }
+
 .select-btn {
   display: flex;
   height: 48px;
@@ -48,7 +50,8 @@ body {
   background-size: cover;
 }
 
-.list-items {
+.assigned-list-items,
+.category-list-items {
   position: relative;
   height: 200px;
 
@@ -56,11 +59,17 @@ body {
   display: none;
   overflow-y: scroll;
 }
-.select-btn.open ~ .list-items {
+
+.select-btn.open ~ .assigned-list-items {
   display: block;
 }
 
-.item {
+.select-btn.open ~ .category-list-items {
+  display: block;
+}
+
+.assigned-item,
+.category-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,7 +80,11 @@ body {
   padding: 0 15px;
   border-radius: 8px;
 }
-.item:hover {
+.assigned-item:hover {
+  background-color: #e7edfe;
+}
+
+.category-item:hover {
   background-color: #e7edfe;
 }
 .item-text {
@@ -87,17 +100,32 @@ body {
   background-size: cover;
 }
 
-.item.checked .check-img {
+.assigned-item.checked .check-img {
   width: 24px;
   height: 24px;
   background-image: url("./checkedBtn.svg");
   background-size: cover;
 }
 
-.item.checked {
+.category-item.checked .check-img {
+  width: 24px;
+  height: 24px;
+  background-image: url("./checkedBtn.svg");
+  background-size: cover;
+}
+
+.assigned-item.checked {
   background-color: #2a3647;
 }
 
-.item.checked .item-text {
+.category-item.checked {
+  background-color: #2a3647;
+}
+
+.assigned-item.checked .item-text {
+  color: #fff;
+}
+
+.category-item.checked .item-text {
   color: #fff;
 }

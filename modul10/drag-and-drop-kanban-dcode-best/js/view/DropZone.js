@@ -22,7 +22,7 @@ export default class DropZone {
     dropZone.addEventListener("drop", (e) => {
       e.preventDefault();
       dropZone.classList.remove("kanban__dropzone--active");
-
+      console.log("dropZone", dropZone);
       const columnElement = dropZone.closest(".kanban__column");
       const columnId = Number(columnElement.dataset.id);
       const dropZonesInColumn = Array.from(columnElement.querySelectorAll(".kanban__dropzone"));
@@ -30,12 +30,13 @@ export default class DropZone {
       const itemId = Number(e.dataTransfer.getData("text/plain"));
       const droppedItemElement = document.querySelector(`[data-id="${itemId}"]`);
       const insertAfter = dropZone.parentElement.classList.contains("kanban__item") ? dropZone.parentElement : dropZone;
+      console.log("dropzone", droppedItemElement.contains(dropZone));
       if (droppedItemElement.contains(dropZone)) {
         return;
       }
-      console.log(columnId);
-      console.log(itemId);
-      console.log(droppedIndex);
+      // console.log(columnId);
+      // console.log(itemId);
+      console.log("droppedIndex", droppedIndex);
       insertAfter.after(droppedItemElement);
       KanbanAPI.updateItem(itemId, {
         columnId,

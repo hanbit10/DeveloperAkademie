@@ -42,7 +42,7 @@
 }
 
 .kanban-dropzone--active {
-  height: 20px;
+  height: 40px;
   background: rgba(0, 0, 0, 0.25);
 }
 

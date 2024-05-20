@@ -39,7 +39,7 @@ export default class Item {
     });
 
     this.elements.root.addEventListener("dragstart", (e) => {
-      console.log(e);
+      console.log("dragstart", e);
       e.dataTransfer.setData("text/plain", id);
     });
 
