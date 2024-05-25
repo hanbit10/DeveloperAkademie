@@ -36,12 +36,12 @@
   cursor: pointer;
 }
 
-.kanban-dropzone {
+.board-card-dropzone {
   height: 10px;
   transition: background 0.15s, height 0.15s;
 }
 
-.kanban-dropzone--active {
+.board-card-dropzone--active {
   height: 40px;
   background: rgba(0, 0, 0, 0.25);
 }
