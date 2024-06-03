@@ -1,0 +1,36 @@
+.d-none {
+  display: none;
+}
+
+.select {
+  padding: 8px 12px;
+  color: #3b3b3b;
+  background-color: #dddddd;
+  border: 1px solid;
+  cursor: pointer;
+  border-radius: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("./arrow_drop_down.svg");
+  background-position: right 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-right: 20px;
+}
+
+.clicked {
+  background-image: url("./arrow_drop_up.svg");
+}
+
+.select:focus,
+.select:hover {
+  outline: none;
+  /* border: 1px solid #912b2b; */
+}
+
+.select option {
+  /* all: unset; */
+  background: #fff;
+  border-radius: 5px;
+}
