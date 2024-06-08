@@ -6,14 +6,6 @@ let contacts = [
   }
 ];
 
-class Contact {
-  constructor(firstName, surName, address){
-    this.firstName = firstName
-    this.surName = surName
-    this.address = address
-  }
-}
-
 function addContact(fn, ln, add) {
   let myNewContact = new Contact(fn, ln, add);
   contacts.push(myNewContact)
