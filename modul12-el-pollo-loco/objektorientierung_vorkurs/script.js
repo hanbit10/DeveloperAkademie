@@ -1,6 +1,6 @@
 let contacts = [
   {
-    'firstName': 'Max',
+  'firstName': 'Habnit',
    'surName': 'Mustermann',
    'address': 'Alexianergraben 40, 52062 Aachen',	
   }
@@ -15,14 +15,10 @@ class Contact {
 }
 
 function addContact(fn, ln, add) {
-  let myNewContact = new Contact();
-  myNewContact.firstName = fn
-  myNewContact.surName = ln
-  myNewContact.address = add
+  let myNewContact = new Contact(fn, ln, add);
   contacts.push(myNewContact)
-
 }
 
 addContact('Max', 'Mustermann', "Alexianergraben 40, 52062 Aachen");
 addContact('Peter', 'Mußermann', "Alexianergraben 40, 52062 Aachen");
-debugger
+console.log(contacts[1]["firstName"])
