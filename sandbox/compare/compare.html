@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function arraysHaveSameElements(a, b) {
+        // Check if both arrays have the same length
+        if (a.length !== b.length) {
+          return false;
+        }
+
+        // Sort the arrays to ensure the elements are in the same order
+        const sortedA = a.sort();
+        const sortedB = b.sort();
+
+        // Compare each element in the arrays
+        for (let i = 0; i < sortedA.length; i++) {
+          if (sortedA[i] !== sortedB[i]) {
+            return false;
+          }
+        }
+
+        // If all elements match, return true
+        return true;
+      }
+
+      // Example arrays
+      const a = ["e", "b"];
+      const b = ["c", "d", "e"];
+
+      // Check if arrays have the same elements
+      const result = arraysHaveSameElements(a, b);
+      console.log(result); // Output: true or false
+    </script>
+  </body>
+</html>

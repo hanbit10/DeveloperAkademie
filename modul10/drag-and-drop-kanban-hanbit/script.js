@@ -43,8 +43,8 @@ function getKanbanContainer(id) {
   <div class="kanban-container" >
     <div id="kanban-title-${id}" class="kanban-title"></div>
       <div id="${id}" class="kanban-content">
-      <div ondragover="allowDrop(event)" id="dropzone" class="kanban-dropzone"></div>
-    </div>
+        <div ondragover="allowDrop(event)" ondrop="doDrop(event)" id="dropzone" class="board-card-dropzone"></div>
+      </div>
       <button onclick="addContent(${id})" class="kanban-add-item" type="button">+ Add</button>
     </div>
   </div>`;
@@ -62,11 +62,11 @@ function getContents(contents, id) {
   let content = document.getElementById(`${id}`);
   contents.forEach(function (index) {
     content.innerHTML += /*html*/ `
-      <div id='${index["id"]}' class="kanban-item" draggable="true" ondragstart='doSetData(event, ${index["id"]})'>
+      <div id='${index["id"]}' class="board-card" draggable="true" ondragstart='doSetData(event, ${index["id"]})'>
         <div id='input-${index["id"]}' onblur='saveBlur(${index["id"]})' contenteditable class="kanban-item-input">${index["content"]}</div>
         <div onclick='deleteContent(${index["id"]})'>x</div>
-        <div ondragover="allowDrop(event)" id="dropzone" class="kanban-dropzone"></div>
       </div>
+      <div ondragover="allowDrop(event)" ondrop="doDrop(event, this)" id="dropzone" class="board-card-dropzone"></div>
     `;
   });
 }
@@ -125,48 +125,75 @@ function insertItem(columnId, content) {
 ///////////////////////////////////////////////////
 
 function getDropZones() {
-  const draggables = document.querySelectorAll(".kanban-dropzone");
+  const draggables = document.querySelectorAll(".board-card-dropzone");
   draggables.forEach((task) => {
     doDragOver(task);
     doDragLeave(task);
-    doDrop(task);
+    // doDrop(task);
   });
 }
 
 function doDragOver(task) {
   task.addEventListener("dragover", () => {
-    task.classList.add("kanban-dropzone--active");
+    task.classList.add("board-card-dropzone--active");
   });
 }
 
 function doDragLeave(task) {
   task.addEventListener("dragleave", () => {
-    task.classList.remove("kanban-dropzone--active");
+    task.classList.remove("board-card-dropzone--active");
   });
 }
 
-function doDrop(task) {
-  task.addEventListener("drop", (e) => {
-    e.preventDefault();
-    task.classList.remove("kanban-dropzone--active");
-    let closestTask = task.closest(".kanban-content");
-    let contentId = Number(closestTask.id);
-    let dropZonesInColumn = Array.from(closestTask.querySelectorAll(".kanban-dropzone"));
-    let droppedIndex = dropZonesInColumn.indexOf(task);
-    let itemId = Number(e.dataTransfer.getData("text/plain"));
-    let droppedItemElement = document.querySelector(`[id="${itemId}"]`);
-    const insertAfter = task.parentElement.classList.contains("kanban-item") ? task.parentElement : task;
+function doDrop(e, target) {
+  // task.addEventListener("drop", (e) => {
+  e.preventDefault();
+  // console.log(e);
+  // console.log("e.id", e.target.id);
+  // console.log("target.id", target.id);
+  let draggableId = e.dataTransfer.getData("text/plain");
+  let idElement = document.getElementById(draggableId);
+  // console.log("this is id", idElement);
+  let closestTaskforId = idElement.closest(".kanban-content");
+  console.log("closest", closestTaskforId);
+  let itemsInColumn = Array.from(closestTaskforId.querySelectorAll(".board-card"));
+  console.log(itemsInColumn);
+  let itemsIndex = itemsInColumn.indexOf(idElement);
+  console.log("itemsIndex", itemsIndex);
+  let task = e.target;
+  task.classList.remove("board-card-dropzone--active");
+  // console.log(e.closest(".kanban-content"));
+  // task.classList.remove("board-card-dropzone--active");
+  let closestTask = task.closest(".kanban-content");
+  // console.log(closestTask);
+  let contentId = Number(closestTask.id);
+  let dropZonesInColumn = Array.from(closestTask.querySelectorAll(".board-card-dropzone"));
+  let droppedIndex = dropZonesInColumn.indexOf(task);
+  let itemId = Number(e.dataTransfer.getData("text/plain"));
+  let droppedItemElement = document.querySelector(`[id="${itemId}"]`);
+  const insertAfter = task.parentElement.classList.contains("board-card") ? task.parentElement : task;
+  // console.log("closestTask", closestTask);
+  // // console.log("contentId", contentId);
+  console.log("droppedIndex", droppedIndex);
+  console.log("dropZonesInColumn", dropZonesInColumn);
+  // console.log("dropzone", droppedItemElement.contains(task));
+  if (droppedItemElement.contains(task)) {
+    return;
+  }
 
-    if (droppedItemElement.contains(task)) {
-    } else {
-      insertAfter.after(droppedItemElement);
-      updateItem(itemId, {
-        contentId,
-        position: droppedIndex,
-      });
-      init();
-    }
+  if (itemsIndex < droppedIndex) {
+    droppedIndex--;
+  }
+
+  console.log("dropped index update", droppedIndex);
+
+  insertAfter.after(droppedItemElement);
+  console.log("ondrop data", read());
+  updateItem(itemId, {
+    contentId,
+    position: droppedIndex,
   });
+  init();
 }
 
 ///////////////////////////////////////////////////
@@ -191,10 +218,15 @@ function save(data) {
 }
 
 function updateItem(itemId, newProps) {
+  console.log("newProps", newProps);
   const data = read();
-  const [item, currenColumn] = (() => {
+  console.log("data", data);
+  const [item, currentColumn] = (() => {
     for (const column of data) {
       const item = column.items.find((item) => item.id == itemId);
+
+      console.log("item", item);
+      console.log("column", column);
       if (item) return [item, column];
     }
   })();
@@ -203,11 +235,14 @@ function updateItem(itemId, newProps) {
 
   item.content = newProps.content === undefined ? item.content : newProps.content;
   // Update column and position
+
+  console.log("item.content", item.content);
+  console.log("newProps.content", newProps.contentId);
   if (newProps.contentId !== undefined && newProps.position !== undefined) {
     const targetColumn = data.find((column) => column.id == newProps.contentId);
     if (!targetColumn) throw new Error("Target column not found");
-
-    currenColumn.items.splice(currenColumn.items.indexOf(item), 1); //Delete the item from it's current column
+    // console.log("currentColumn", currentColumn);
+    currentColumn.items.splice(currentColumn.items.indexOf(item), 1); //Delete the item from it's current column
     targetColumn.items.splice(newProps.position, 0, item); // Move item into its new column and position
   }
   save(data);

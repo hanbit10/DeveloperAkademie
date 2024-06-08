@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
+    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="calendar" style="height: 800px"></div>
+    <script>
+      /* in the browser environment namespace */
+      const Calendar = tui.Calendar;
+      const calendar = new Calendar("#calendar", {
+        defaultView: "montth",
+        template: {
+          time(event) {
+            const { start, end, title } = event;
+
+            return `<span style="color: white;">${formatTime(start)}~${formatTime(end)} ${title}</span>`;
+          },
+          allday(event) {
+            return `<span style="color: gray;">${event.title}</span>`;
+          },
+        },
+        calendars: [
+          {
+            id: "cal1",
+            name: "Personal",
+            backgroundColor: "#03bd9e",
+          },
+          {
+            id: "cal2",
+            name: "Work",
+            backgroundColor: "#00a9ff",
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>

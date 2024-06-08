@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label.btn1 {
+  width: 136px;
+  height: 56px;
+  display: inline-block;
+  background-image: url("./icons/low_button.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="radio"] + label.btn2 {
+  width: 136px;
+  height: 56px;
+  display: inline-block;
+  background-image: url("./icons/medium_button.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="radio"] + label.btn3 {
+  width: 136px;
+  height: 56px;
+  display: inline-block;
+  background-image: url("./icons/urgent_button.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* input[type=radio] + label.btn:hover {
+  box-shadow: 0 4px #ab3c3c;
+  top: 2px;
+} */
+
+input[type="radio"] + label.btn1:hover {
+  background-image: url("./icons/low_button_hover.svg");
+}
+
+input[type="radio"] + label.btn2:hover {
+  background-image: url("./icons/medium_button_hover.svg");
+}
+
+input[type="radio"] + label.btn3:hover {
+  background-image: url("./icons/urgent_button_hover.svg");
+}
+
+input[type="radio"]:checked + label.btn1 {
+  background-image: url("./icons/low_button_clicked.svg");
+  width: 136px;
+  height: 50px;
+}
+
+input[type="radio"]:checked + label.btn2 {
+  background-image: url("./icons/medium_button_clicked.svg");
+  width: 136px;
+  height: 50px;
+}
+
+input[type="radio"]:checked + label.btn3 {
+  background-image: url("./icons/urgent_button_clicked.svg");
+  width: 136px;
+  height: 50px;
+}
+
+.container {
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.priority-button-container {
+  width: 150px;
+}
