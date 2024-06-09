@@ -1,9 +1,6 @@
-class Contact {
-  constructor(firstName, surName, address, phone){
-    this.firstName = firstName
-    this.surName = surName
-    this.address = address
-    this.phone = phone
+class Contact extends Person {
+  constructor(firstName, surName, address, phone, ){
+    super(firstName, surName, address, phone)
   }
 
   printFullName() {
